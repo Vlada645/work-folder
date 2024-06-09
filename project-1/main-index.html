@@ -31,11 +31,12 @@
                     <br><br>
                     <a href="about:blank" class="header-content__link link">office@medzakupivli.com</a>
                 </p>
-                <div class="header-content__grid"> <!--як краще називати блоки в середині? items, socials, row або grid? -->
-                    <a class="header-content__item header-content__link--display-none">LinkedIn <img src="Images/linkedin-icon.png" alt="LinkedIn-icon"></a>
-                    <a class="header-content__item">Facebook <img src="Images/facebook.png" alt="Facebook-icon"></a>
-                    <a class="header-content__item link">Telegram <img src="Images/linkedIn.png" alt="Telegram-icon"></a>
-                    <a class="header-content__item header-content__link--display-none link">Instagram <img src="Images/linkedIn.png" alt="Instagram-icon"></a>
+                <div class="header-content__socials header-content__socials--grid"> <!--як краще називати блоки в середині? items, socials, row або grid? -->
+                    <!-- як краще називати такі елементи? -->
+                    <a class="header-content__link header-content__link--display-none">LinkedIn <img class="header-content__icon" src="Images/linkedin-icon.png" alt="LinkedIn-icon"></a>
+                    <a class="header-content__link">Facebook <img class="header-content__icon" src="Images/facebook.png" alt="Facebook-icon"></a>
+                    <a class="header-content__link link">Telegram <img class="header-content__icon" src="Images/linkedIn.png" alt="Telegram-icon"></a>
+                    <a class="header-content__link header-content__link--display-none link">Instagram <img class="header-content__icon" src="Images/linkedIn.png" alt="Instagram-icon"></a>
                 </div>
                  <div class="header-content__socials"> <!--як краще повино називатися блоки в середині? box або mini-contant, inner? -->
                     <h1 class="header-conten__socials__title title">Контакти для медіа</h1>
@@ -47,7 +48,7 @@
         </div>
     </header>
 
-    <section class="career">
+    <section class="career"> <!-- ці блоки можна рахувати як інші секції, чи це один header? -->
         <div class="container">
             <img class="career__img" src="Images/career__img.png" alt="">
             <h1 class="career__titl title">Кар'єра</h1>
@@ -62,18 +63,20 @@
         </div>
     </section>
 
-    <section class="media-center">
+    <section class="media-center"> <!-- ці блоки можна рахувати як інші секції, чи це один header? -->
         <div class="container">
             <img class="media-center__img" src="Images/media-center__img.png" alt="">
-            <h1 class="media-center__title title">Медіа-центр</h1>
-            <p class="media-center__text">
-                Текст опису до 200 символів.
-                Lorem ipsum dolor sit amet consectetur.
-                Blandit rhoncus quis consectetur fringilla cras ac.
-                Nullam sed proin adipiscing sapien viverra donec velit ac leo.
-                Pulvinar diam aliquam odio dolor duis cras malesuada tempor.
-                Velit quis faucibus sed rhoncus
-            </p>
+            <div class="media-center__col">
+                <h1 class="media-center__title title">Медіа-центр</h1>
+                <p class="media-center__text">
+                    Текст опису до 200 символів.
+                    Lorem ipsum dolor sit amet consectetur.
+                    Blandit rhoncus quis consectetur fringilla cras ac.
+                    Nullam sed proin adipiscing sapien viverra donec velit ac leo.
+                    Pulvinar diam aliquam odio dolor duis cras malesuada tempor.
+                    Velit quis faucibus sed rhoncus
+                </p>
+            </div>
         </div>
     </section>
 

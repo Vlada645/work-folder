@@ -120,35 +120,51 @@ $background-color-sections: #ffff;
     gap: 4px;
     justify-content: space-between;
 
-    .career__col {
+    &__col {
+        display: flex;
         flex-direction: column;
+        
+    }
+    &__img {
+        // padding: 10% 42px 59px 8%;
+        
     }
 
-    .career {
+    &__text {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    &__title {
+        padding-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    .additional-blocks__career {
         background-color: $background-color-sections;
-        width: 49.5%;
+        width: 49.8%;
+        border-radius: 20px;
+        padding: 6% 5% 4% 4%;
+        gap: 10%;
+        display: $default-display;
+        justify-content: space-between;
+        align-items: center;
+
+
+    }
+
+
+    .additional-blocks__media-center {
+        background-color: $background-color-sections;
+        padding: 6% 5% 4% 4%;
+        width: 49.8%;
+        gap: 10%;
         border-radius: 20px;
         display: $default-display;
         justify-content: center;
         align-items: center;
-        &__img {
-            padding: 81px 42px 59px 70px;
-            border-radius: 50%;
-        }
 
-    }
-
-    
-    .media-center {
-        background-color: $background-color-sections;
-        width: 50%;
-        border-radius: 20px;
-        display: $default-display;
-        justify-content: center;
-        align-items: center;
-        &__img {
-            padding: 81px 42px 59px 70px;
-            border-radius: 50%;
-        }
     }
 }

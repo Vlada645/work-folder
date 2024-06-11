@@ -6,7 +6,7 @@ $font-family: "Nunito Sans", sans-serif;
 $default-color: #000000;
 $default-display: flex;
 $background-color-sections: #ffff;
-
+$font-size-title:3.5rem;
 
 
 %header-list {
@@ -28,8 +28,16 @@ $background-color-sections: #ffff;
     display: $default-display;
     flex-direction: column;
     align-items: center;
+}
 
-
+%additional-blocks {
+    background-color: $background-color-sections;
+    padding: 6% 5% 4% 4%;
+    width: 49.8%;
+    gap: 10%;
+    border-radius: 20px;
+    display: $default-display;
+    align-items: center;
 }
 
 
@@ -56,6 +64,10 @@ $background-color-sections: #ffff;
 
     align-items: start;
     background:none;
+}
+
+.link {
+    color: $default-color;
 }
 
 .breadcrumb {
@@ -89,17 +101,47 @@ $background-color-sections: #ffff;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0px auto;
+    padding: 0% 11% 0% 3%;
+
+    &__title {
+        font-size: $font-size-title;
+    }
 
     .contact-content {
-        width: 32%;
-        padding: 54px 0% 167px 6%;
+        width: 50%;
+        
+    }
+     .contact__top {
+        display: $default-display;
+        flex-direction: column;
+        gap: 20px
+    }
+
+    &__items {
+        display: $default-display;
+        padding-top: 30px;
+        gap: 20px;
+    }
+
+    &__item {
+        color: white;
+        background-color: $default-color;
+        padding: 12px 12px 12px 12px;
+        border-radius: 8px;
+        display: $default-display;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
     }
 
     .contact__map {
-        width: 50%;
+        width: 40%;
         height: 100%;
-        padding: 54px 216px 167px 0.6%;
+        padding: 10% 0% 10% 0%;
         
         display: $default-display;
         align-items: center;
@@ -118,20 +160,14 @@ $background-color-sections: #ffff;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 4px;
-    justify-content: space-between;
 
     &__col {
-        display: flex;
+        display: $default-display;
         flex-direction: column;
-        
-    }
-    &__img {
-        // padding: 10% 42px 59px 8%;
-        
     }
 
     &__text {
-        display: flex;
+        display: $default-display;
         flex-direction: row;
         font-size: 0.9rem;
         width: 100%;
@@ -142,26 +178,7 @@ $background-color-sections: #ffff;
         font-size: 1.5rem;
     }
 
-    .additional-blocks__career {
-        background-color: $background-color-sections;
-        width: 49.8%;
-        border-radius: 20px;
-        padding: 6% 5% 4% 4%;
-        gap: 10%;
-        display: $default-display;
-        align-items: center;
-
-
-    }
-
-
-    .additional-blocks__media-center {
-        background-color: $background-color-sections;
-        padding: 6% 5% 4% 4%;
-        width: 49.8%;
-        gap: 10%;
-        border-radius: 20px;
-        display: $default-display;
-        align-items: center;
+    .additional-blocks__career, .additional-blocks__media-center {
+        @extend %additional-blocks;
     }
 }

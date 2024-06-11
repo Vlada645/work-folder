@@ -149,7 +149,6 @@ $background-color-sections: #ffff;
         padding: 6% 5% 4% 4%;
         gap: 10%;
         display: $default-display;
-        justify-content: space-between;
         align-items: center;
 
 
@@ -163,8 +162,6 @@ $background-color-sections: #ffff;
         gap: 10%;
         border-radius: 20px;
         display: $default-display;
-        justify-content: center;
         align-items: center;
-
     }
 }

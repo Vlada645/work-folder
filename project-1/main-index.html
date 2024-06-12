@@ -4,71 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scss/style.css">
 </head>
 <body class="body">
     <header class="header header-contacts">
-        <div class="container">
-            <div class="header-top">
-                <nav class="menu">
-                    <a class="logo" href="#"></a>
-                    <ul class="menu__list">
-                        <li class="menu__list-item">
-                            <a class="menu__list-link" href="#"></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="header-content">
-                <h1 class="header-content__title title">Контакти</h1>
-                <p class="header-content__text">
+        <nav class="breadcrumb">
+            <ol class="breadcrumb_items">
+                <li class="breadcrumb__item"><a href="#"><img src="Images/Home.png" alt="home"></a></li>
+                <li class="breadcrumb__item">Контакти</li>
+            </ol>
+        </nav>
+    </header>
+    <section class="contact">
+        <div class="contact-content">
+            <div class="contact__top">
+                <h1 class="contact__title title">Контакти</h1>
+                <p class="contact__text">
                     +38 (067) 134 42 81
                     <br><br>
-                    вул. Хрещатик 22, м. Київ, 01001
-                    Робочі години: понеділок-п'ятниця, 9:00 - 18:00
+                    вул. Хрещатик 22, м. Київ, 01001 <br>
+                    Робочі години: понеділок-п'ятниця, 9:00 - 18:00 <br>
                     Обідня перерва: 13:00 - 14:00
                     <br><br>
-                    <a href="about:blank" class="header-content__link link">office@medzakupivli.com</a>
+                    <a href="about:blank" class="contact__link link">office@medzakupivli.com</a>
                 </p>
-                <div class="header-content__socials header-content__socials--grid"> <!--як краще називати блоки в середині? items, socials, row або grid? -->
+                <div class="contact__items"> <!--як краще називати блоки в середині? items, socials, row або grid? -->
                     <!-- як краще називати такі елементи? -->
-                    <a class="header-content__link header-content__link--display-none">LinkedIn <img class="header-content__icon" src="Images/linkedin-icon.png" alt="LinkedIn-icon"></a>
-                    <a class="header-content__link">Facebook <img class="header-content__icon" src="Images/facebook.png" alt="Facebook-icon"></a>
-                    <a class="header-content__link link">Telegram <img class="header-content__icon" src="Images/linkedIn.png" alt="Telegram-icon"></a>
-                    <a class="header-content__link header-content__link--display-none link">Instagram <img class="header-content__icon" src="Images/linkedIn.png" alt="Instagram-icon"></a>
+                    <a class="contact__item contact__link--display-none">LinkedIn <img class="contact__icon" src="Images/linkedin-icon.png" alt="LinkedIn-icon"></a>
+                    <a class="contact__item">Facebook <img class="contact__icon" src="Images/facebook.png" alt="Facebook-icon"></a>
+                    <a class="contact__item">Telegram <img class="contact__icon" src="Images/linkedin-icon.png" alt="Telegram-icon"></a>
+                    <a class="contact__item contact__link--display-none link">Instagram <img class="contact__icon" src="Images/ic24-instagram.png" alt="Instagram-icon"></a>
                 </div>
-                 <div class="header-content__socials"> <!--як краще повино називатися блоки в середині? box або mini-contant, inner? -->
-                    <h1 class="header-conten__socials__title title">Контакти для медіа</h1>
-                    <a href="#" class="header-contant__socials__link link">mailto:communications@medzakupivli.com</a>
-                </div>
-                <div class="header-content__map"></div>
             </div>
-
+            <div class="contact__inner">
+                <h1 class="contact__inner-title contact__title">Контакти для медіа</h1>
+                <a href="#" class="contact__inner-link link">mailto:communications@medzakupivli.com</a>
+            </div>
         </div>
-    </header>
-
-    <section class="career"> <!-- ці блоки можна рахувати як інші секції, чи це один header? -->
-        <div class="container">
-            <img class="career__img" src="Images/career__img.png" alt="">
-            <h1 class="career__titl title">Кар'єра</h1>
-            <p class="career__text">
-                Текст опису до 200 символів.  
-                Lorem ipsum dolor sit amet consectetur. 
-                Blandit rhoncus quis consectetur fringilla cras ac. 
-                Nullam sed proin adipiscing sapien viverra donec velit ac leo. 
-                Pulvinar diam aliquam odio dolor duis cras malesuada tempor. 
-                Velit quis faucibus sed rhoncus 
-            </p>
+        <div class="contact__map">
+            <img src="Images/map.png" alt="">
         </div>
     </section>
+    <section class="additional-blocks">
+        <div class="additional-blocks__career"> 
+            <img class="additional-blocks__img" src="Images/career__img.png" alt="">
+            <div class="additional-blocks__col">
+                <h1 class="additional-blocks__title title">Кар'єра</h1>
+                <p class="additional-blocks__text">
+                    Текст опису до 200 символів.  Lorem ipsum dolor sit amet consectetur. 
+                    Blandit rhoncus quis consectetur fringilla cras ac. 
+                    Nullam sed proin adipiscing sapien viverra donec velit ac leo. 
+                    Pulvinar diam aliquam odio dolor duis cras malesuada tempor. 
+                    Velit quis faucibus sed rhoncus 
+                </p>
+            </div>  
+        </div>
 
-    <section class="media-center"> <!-- ці блоки можна рахувати як інші секції, чи це один header? -->
-        <div class="container">
-            <img class="media-center__img" src="Images/media-center__img.png" alt="">
-            <div class="media-center__col">
-                <h1 class="media-center__title title">Медіа-центр</h1>
-                <p class="media-center__text">
+        <div class="additional-blocks__media-center">
+            <img class="additional-blocks__img" src="Images/media-center__img.png" alt="">
+            <div class="additional-blocks__col">
+                <h1 class="additional-blocks__title title">Медіа-центр</h1>
+                <p class="additional-blocks__text">
                     Текст опису до 200 символів.
                     Lorem ipsum dolor sit amet consectetur.
                     Blandit rhoncus quis consectetur fringilla cras ac.

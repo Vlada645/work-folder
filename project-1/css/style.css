@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+.breadcrumb_items {
+  color: #000000;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+
+.additional-blocks, .contact, .header {
+  background-color: white;
+  max-width: 94%;
+  min-width: 94%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.additional-blocks .additional-blocks__career, .additional-blocks .additional-blocks__media-center {
+  background-color: white;
+  padding: 6% 5% 4% 4%;
+  width: 49.8%;
+  gap: 10%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact__item {
+  color: white;
+  background-color: #000000;
+  padding: 12px 12px 12px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  background-color: #ECECEC;
+  color: #000000;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 5px;
+}
+
+.header {
+  align-items: start;
+  background: none;
+}
+
+.link {
+  color: #000000;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.breadcrumb__item img {
+  width: 16px;
+  height: 16px;
+}
+.breadcrumb__item::after {
+  content: "/";
+  padding: 0px 10px 0px 10px;
+}
+.breadcrumb__item:last-child::after {
+  content: "";
+}
+
+.contact {
+  padding: 5% 4% 8% 3%;
+}
+.contact__title {
+  font-size: 3.5rem;
+}
+.contact__items {
+  display: flex;
+  color: white;
+  padding-top: 30px;
+  gap: 20px;
+}
+.contact__icon {
+  width: 16px;
+  height: 16px;
+}
+.contact .contact__top, .contact .contact__bottom {
+  flex: 1 1 50%;
+}
+.contact .contact__top {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  order: 1;
+  gap: 20px;
+}
+.contact .contact__bottom {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  order: 3;
+  gap: 10px;
+}
+.contact .contact__map {
+  padding-left: 7%;
+  flex: 2 1 46%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  order: 2;
+}
+.contact .contact__map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.contact .contact__map .contact__mark {
+  display: none;
+  justify-self: center;
+}
+
+.additional-blocks {
+  background: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 4px;
+}
+.additional-blocks__col {
+  display: flex;
+  flex-direction: column;
+}
+.additional-blocks__text {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  width: 100%;
+}
+.additional-blocks__title {
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+}
+.additional-blocks__img {
+  max-width: 40%;
+  max-height: 30%;
+  min-width: 24%;
+  min-height: 20%;
+}
+@media (max-width: 1200px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    font-size: 0.87rem;
+    padding: 5% 5% 5% 5%;
+    gap: 35px;
+  }
+  .contact__link--display-none {
+    display: none;
+  }
+  .contact__title {
+    font-size: 1.75rem;
+  }
+  .contact .contact__top {
+    order: 1;
+  }
+  .contact .contact__bottom {
+    order: 3;
+  }
+  .contact .contact__map {
+    padding-left: 0px;
+    order: 2;
+  }
+  .additional-blocks {
+    padding-top: 32px;
+  }
+  .additional-blocks__text--display-none {
+    display: none;
+  }
+  .additional-blocks .additional-blocks__career, .additional-blocks .additional-blocks__media-center {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .additional-blocks__title::after {
+    content: ">";
+    padding: 0px 10px 0px 6px;
+  }
+}
+@media (max-width: 600px) {
+  .additional-blocks__title {
+    font-size: 0.87rem;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-
+// я так зрозуміла ці значення використовються для подальшої швидкої зміни теми в проєкті?
 $background-color-body: #ECECEC;
 $font-family: "Nunito Sans", sans-serif;
 $default-color: #000000;
 $default-display: flex;
 $background-color-sections: #ffff;
 $font-size-title:3.5rem;
+$layout-breakpoint-small:600px;
+$layout-breakpoint-medium: 1200px;
 
+// для чого використовуються @mixin? і де краще його використовувати
 
 %header-list {
     color: $default-color;
@@ -40,6 +43,24 @@ $font-size-title:3.5rem;
     align-items: center;
 }
 
+%colum--wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+%button {
+    color: white;
+    background-color: $default-color;
+    padding: 12px 12px 12px 12px;
+    border-radius: 8px;
+    display: $default-display;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    overflow: hidden;
+    
+}
 
 * {
     margin: 0;
@@ -87,7 +108,7 @@ $font-size-title:3.5rem;
     }
     &__item::after {
         content: "/";
-        margin: 0px 10px 0px 10px;
+        padding: 0px 10px 0px 10px;
     }
 
     &__item:last-child::after {
@@ -97,40 +118,23 @@ $font-size-title:3.5rem;
 
 .contact {
     @extend %sections;
+    @extend %colum--wrap;
 
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0% 11% 0% 3%;
+    padding: 5% 4% 8% 3%;
 
     &__title {
         font-size: $font-size-title;
     }
 
-    .contact-content {
-        width: 50%;
-        
-    }
-     .contact__top {
-        display: $default-display;
-        flex-direction: column;
-        gap: 20px
-    }
-
     &__items {
         display: $default-display;
+        color: $background-color-sections;
         padding-top: 30px;
         gap: 20px;
     }
 
     &__item {
-        color: white;
-        background-color: $default-color;
-        padding: 12px 12px 12px 12px;
-        border-radius: 8px;
-        display: $default-display;
-        align-items: center;
-        gap: 10px;
+        @extend %button;
     }
 
     &__icon {
@@ -138,17 +142,43 @@ $font-size-title:3.5rem;
         height: 16px;
     }
 
-    .contact__map {
-        width: 40%;
-        height: 100%;
-        padding: 10% 0% 10% 0%;
-        
-        display: $default-display;
-        align-items: center;
+    .contact__top, .contact__bottom {
+        flex: 1 1 50%;
+    }
 
+    .contact__top {
+        display: $default-display;
+        flex-direction: column;
+        align-self: flex-start;
+        order: 1;
+        gap: 20px
+    }
+
+    .contact__bottom {
+        display: $default-display;
+        flex-direction: column;
+        align-self: flex-start;
+        order: 3;
+        gap: 10px;
+    }
+
+    .contact__map {
+        padding-left: 7%;
+        flex: 2 1 46%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+        order: 2;
+    
         img {
+            display: block;
             width: 100%;
-            height: 100%;
+            height: auto;
+        }
+        .contact__mark {
+            display: none;
+            justify-self: center;
         }
     }
 }
@@ -178,7 +208,71 @@ $font-size-title:3.5rem;
         font-size: 1.5rem;
     }
 
+    &__img {
+        max-width: 40%;
+        max-height: 30%;
+        min-width: 24%;
+        min-height: 20%
+    }
+
     .additional-blocks__career, .additional-blocks__media-center {
         @extend %additional-blocks;
+    }
+}
+
+@media  (max-width: $layout-breakpoint-medium) {
+    .contact {
+        display: $default-display;
+        flex-direction: column;
+        align-content: flex-start;
+        font-size: 0.87rem;
+        padding: 5% 5% 5% 5%;
+        gap: 35px;
+
+        &__link--display-none {
+            display: none;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+        }
+
+        .contact__top {
+            order: 1;
+        }
+        .contact__bottom {
+            order: 3;
+        }
+
+        .contact__map {
+            padding-left: 0px;
+            order: 2;
+        }
+    }
+    .additional-blocks {
+        padding-top: 32px;
+
+        &__text--display-none {
+            display: none;
+        }
+        .additional-blocks__career, .additional-blocks__media-center {
+            @extend %additional-blocks;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &__title::after {
+            content: ">";
+            padding: 0px 10px 0px 6px;
+        }
+    }
+}
+
+@media (max-width: $layout-breakpoint-small) {
+    .additional-blocks {
+        &__title {
+            font-size: 0.87rem;
+        }
     }
 }

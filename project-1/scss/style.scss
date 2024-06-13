@@ -120,6 +120,8 @@ $layout-breakpoint-medium: 1200px;
     @extend %sections;
     @extend %colum--wrap;
 
+     flex-direction: row;
+    
     padding: 5% 4% 8% 3%;
 
     &__title {

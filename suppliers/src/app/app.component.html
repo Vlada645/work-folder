@@ -47,7 +47,7 @@
     <div class="main__tender-procedures--bottom">
     <div class="main__tender-procedures__item" *ngFor="let content of info.tenderProcedures.content" [ngClass]="{'content--blue': content.position == '1', 'content--green': content.position == '2', 'content--purple': content.position == '3'}">
         <h2>{{content.title}}</h2>
-        <div [innerHTML]="content.details"></div> <!-- а як тут змінити вид списку використовучи цю змінну content.details? -->
+        <div [innerHTML]="content.details"></div>
     </div>
   </div>
 
@@ -57,7 +57,7 @@
         <div [innerHTML]="info.whatWeBuy.description"></div>
     </div>
     <div  class="main__items--right">
-      <div class="" *ngFor="let content of info.whatWeBuy.content, let i = index">
+      <div class="" *ngFor="let content of info.whatWeBuy.content, let i = index"> <!--Як виправити цей баг, що невидимі елементи впливають на кнопку?-->
         <div  *ngIf="i < visibleItems" [ngClass]="{'main__item': i < visibleItems}">
           <a class=" link" [href]="action.link" *ngFor="let action of content.actions">{{content.title}}</a>
           </div>

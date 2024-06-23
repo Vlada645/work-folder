@@ -1,0 +1,444 @@
+@import '../styles/mixins.scss';
+@import '../styles/extends.scss';
+
+$font-family: "Nunito Sans", sans-serif;
+$default-display: flex;
+$font-size-title:3.5rem;
+$font-size-text: 1rem;
+$layout-breakpoint-small:600px;
+$layout-breakpoint-medium: 1200px;
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.link {
+    color: color(primary);
+    text-decoration: none;
+}
+
+.button--background-DBDBF2 {
+    background-color: #DBDBF2;
+    color: black !important;
+}
+
+.button--background-black {
+    background-color: black;
+    color: white;
+}
+
+.content--blue {
+    background-color: #7BC7FA;
+}
+
+.content--green {
+    background-color: #C3DB57;
+}
+.content--purple {
+    background-color: #AE82F7;
+}
+
+.hidden {
+    display: none;
+  }
+
+.header {
+    @extend %sections;
+    padding: 0;
+    align-items: start;
+    background:none;
+}
+
+.breadcrumb {
+    display: $default-display;
+    align-items: center;
+    padding-left: 5%;
+    font-weight: 400;
+    font-size: 0.8rem;
+    &_items{
+        @extend %header-list;
+    }
+    &__item {
+        img{
+            width: 16px;
+            height: 16px;
+        }
+        &::after {
+            content: "/";
+            padding: 0px 10px 0px 10px;
+        }
+    
+        &:last-child::after {
+            content: "";
+        }
+        
+    }
+
+}
+
+.suppliers {
+    @extend %sections;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    overflow: hidden;
+
+    &__title {
+        font-size: $font-size-title;
+        padding-bottom: 20px;
+    }
+    &__main--left {
+        display: $default-display;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 40%;
+
+    }
+    &__items {
+        display: $default-display;
+        flex-direction: row;
+        font-size: 0.8rem;
+        padding-top: 30px;
+        gap: 20px;
+    }
+
+    &__item {
+        @extend %button;
+        color: color(secondary);
+        max-width: 50%;
+        min-width: 30%;
+    }
+    &__main--right{
+        display: $default-display;
+        justify-content: center;
+        // background-image: url("../../public/bgImg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+
+        padding-right: 60px;
+        &__img {
+            width: 60%;
+            height: 40%;
+        }
+    }
+
+}
+
+.howWeBuy {
+    @extend %sections;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    background: none;
+
+    &__item--first { 
+        @extend %sections;
+        align-items: flex-start;
+        padding: 4% 0% 9% 2%;
+        gap: 40px;
+        flex: 1 1 49.8%;
+        min-height: 100%;
+        max-width: 49.8%;
+        min-width: 49.8%;
+        max-width: 100%;
+        font-size: 2rem;
+    }
+    &__item {
+        @extend %sections;
+        flex-direction: row;
+        gap: 20px;
+        flex: 1 1 49.5%;
+        
+        min-height: 100%;
+        max-width: none;
+        min-width: 49.7%;
+    }
+    &__text {
+        display: $default-display;
+        flex-direction: column;
+        width: 50%;
+        gap: 20px;
+    }
+    &__img--mini {
+        width: 80px;
+        height: 80px;
+    }
+    &__img {
+        width: 40%;
+    }
+    &__buttons {
+        display: $default-display;
+        flex-direction: row;
+        gap: 20px;
+    }
+    &__button {
+        @extend %button;
+        border: none;
+        min-width: 40%;
+    }
+    &__arrow {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+.main {
+    @extend %sections;
+
+    font-size: $font-size-text;
+    &__img--top {
+        width: 80px;
+        height: 80px;
+    }
+    &__title {
+        font-size: $font-size-title;
+    }
+    &__img--top {
+        width: 80px;
+        height: 80px;
+    }
+
+    &__tender-procedures {
+        @extend %sections;
+        font-size: $font-size-text;
+        gap: 76px;
+        &--top {
+            display: $default-display;
+            flex-direction: row;
+            justify-content: space-around;
+            &-left {
+                display: $default-display;
+                flex: 1 1 49%;
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        &--top-right {
+            display: $default-display;
+            flex-direction: column;
+            flex: 1 1 40%;
+            max-width: 40%;
+            gap: 20px;
+        }
+        &--bottom {
+            display: $default-display;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        &__item {
+            display: $default-display;
+            flex-direction: column;
+            flex: 1 1 32%;
+            padding: 4% 5% 4% 5%;
+            min-width: 32%;
+            max-width: 100%;
+            gap: 10px;
+            min-height: 80%;
+            border-radius: 10px;
+
+        }
+    }
+    &__whatWeBuy {
+        @extend %sections;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 100px;
+        min-width: 100%;
+    }
+    &__title--white {
+        background-color: #AE82F7;
+        padding: 16px 32px 16px 32px;
+        border-radius: 40px;
+        color: white;
+    }
+
+    &__text--left {
+        display: $default-display;
+        flex-wrap: wrap;
+        flex: 1 1 40%;
+        gap: 20px;
+    }
+    &__items--right {
+        display: $default-display;
+        flex-direction: column;
+        height: 100%;
+        gap: 20px;
+        flex: 1 1 40%;
+    }
+    &__item {
+        background-color: #C7C7C7;
+        padding: 3% 3% 3% 3%;
+        border-radius: 10px;
+        
+    }
+    &__button {
+        align-self: center;
+        width: 30%;
+        padding: 3%;
+        font-size: 0.9rem;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}
+
+.public-procurement {
+    @extend %sections;
+    background: none;
+    padding: 110px 0px 0px 0px;
+    align-items: flex-start;
+    gap: 56px;
+
+    &__title {
+       font-size: 1.75rem; 
+    }
+    &__button {
+        background-color: #F4F4F4;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 12px;
+    }
+    &__text {
+        display: $default-display;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__items {
+        display: $default-display;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+        width: 100%;
+    }
+
+    &__item {
+        @extend %sections;
+        align-items: flex-start;
+        background-color: $background-color-sections;
+        flex: 1 1 33%;
+        min-width: 33%;
+        max-width: 100%;
+        gap: 16px;
+        cursor: pointer;
+    }
+    &__ids {
+        display: $default-display;
+        flex-direction: row;
+        gap: 12px;
+    }
+    &__alias {
+        background-color: #28285E;
+        color: white;
+        padding: 4px 12px 4px 12px;
+        border-radius: 10px;
+    }
+    &__id-number {
+        background-color: #C3DB57;
+        padding: 4px 12px 4px 12px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width:$layout-breakpoint-medium) {
+    .suppliers {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+        &__items {
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        &__main {
+            &--left {
+                width: 100%;
+            }
+            &--right {
+                padding: 0;
+                width: 100%;
+            }
+        }
+        &__img {
+            
+
+            width: 30%;
+        }
+    }
+    .howWeBuy {
+        flex-direction: column;
+        &__item--first{
+            width: 100%;
+        }
+        &__item{
+            width: 100%;
+        }
+        &__img {
+            width: 20%;
+        }
+    }
+    .main {
+        &__text--left {
+            gap: 30px;
+        }
+        &__tender-procedures {
+            gap: 45px;
+            &--top {
+                flex-direction: column;
+                gap: 30px;
+                &-right {
+                    max-width: 100%;
+                }
+            }
+            &--bottom {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        &__whatWeBuy {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+    .public-procurement {
+        &__items {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width:$layout-breakpoint-small) {
+    .suppliers {
+        align-items: flex-start;
+        
+        &__main--left{
+            width: 100%;
+        }
+        
+        &__main--right {
+            display: none;
+        }
+        &__items {
+            flex-direction: column;
+        }
+        &__item {
+            max-width: 100%;
+        }
+    }
+}

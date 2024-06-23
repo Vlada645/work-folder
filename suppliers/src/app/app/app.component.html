@@ -1,0 +1,87 @@
+<header class="header header-contacts">
+  <nav class="breadcrumb">
+      <ol class="breadcrumb_items">
+          <li class="breadcrumb__item"><a href="#"><img src="../Home.png" alt="home"></a></li>
+          <li class="breadcrumb__item">Контакти</li>
+      </ol>
+  </nav>
+</header>
+<section class="suppliers" *ngFor="let info of aboutInfo">
+    <div class="suppliers__main--left">
+    <h1 class="suppliers__title">{{info.suppliersMain.title}}</h1>
+    <p [innerHTML]="info.suppliersMain.details"></p>
+    <div class="suppliers__items">
+      <button class="suppliers__item" *ngFor="let action of info.suppliersMain.actions" [ngClass]="{'button--background-black': action.link === '', 'button--background-DBDBF2': action.link !== ''}" [routerLink]="action.link">{{action.title}}</button>
+    </div>
+  </div>
+  <div class="suppliers__main--right">
+      <img class="suppliers__img" [src]="info.suppliersMain.img" alt="suppliersMain__logo">
+  </div>
+</section>
+<section class="howWeBuy" *ngFor="let info of aboutInfo">
+  <div class="howWeBuy__item--first">
+    <img class="howWeBuy__img--mini" [src]="info.howWeBuy.img" alt="logo-shop">
+    <h1>{{info.howWeBuy.title}}</h1>
+  </div>
+  <div class="howWeBuy__item" *ngFor="let content of info.howWeBuy.content">
+    <img class="howWeBuy__img" [src]="content.img" alt="content__logo">
+    <div class="howWeBuy__text">
+      <h2>{{content.title}}</h2>
+      <p>{{content.details}}</p>
+      <div class="howWeBuy__buttons">
+        <button class="howWeBuy__button" *ngFor="let action of content.actions" [ngClass]="{'button--background-black': action.link === '', 'button--background-DBDBF2': action.link !== ''}"  [routerLink]="action.link">{{action.title}} <span class="howWeBuy__arrow" *ngIf="content.position == '2'">></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main" *ngFor="let info of aboutInfo">
+  <div class="main__tender-procedures">
+    <div class="main__tender-procedures--top">
+      <div class="main__tender-procedures--top-left">
+        <img class="main__img--top" [src]="info.tenderProcedures.img" alt="">
+        <h1 class="main__title">{{info.tenderProcedures.title}}</h1>
+      </div>
+      <div class="main__tender-procedures--top-right" [innerHTML]="info.tenderProcedures.description"></div>
+    </div>
+    <div class="main__tender-procedures--bottom">
+    <div class="main__tender-procedures__item" *ngFor="let content of info.tenderProcedures.content" [ngClass]="{'content--blue': content.position == '1', 'content--green': content.position == '2', 'content--purple': content.position == '3'}">
+        <h2>{{content.title}}</h2>
+        <div [innerHTML]="content.details"></div>
+    </div>
+  </div>
+
+  <div class="main__whatWeBuy">
+    <div class="main__text--left">
+        <h1 class="main__title--white">{{info.whatWeBuy.title}}</h1>
+        <div [innerHTML]="info.whatWeBuy.description"></div>
+    </div>
+    <div  class="main__items--right"> <!--Як виправити цей баг, що невидимі елементи впливають на кнопку?-->
+      <div class="" *ngFor="let content of info.whatWeBuy.content, let i = index">
+        <div  *ngIf="i < visibleItems" [ngClass]="{'main__item': i < visibleItems}">
+          <a class=" link" [href]="action.link" *ngFor="let action of content.actions">{{content.title}}</a>
+          </div>
+        </div>
+        <button class="main__button" (click)="showMore()">Ще</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="public-procurement" *ngFor="let info of aboutInfo"> <!--Я не знайшла за якими айді треба було зробити не видними елементи, бо всі id дані були заповнені-->
+  <div class="public-procurement__text">
+    <h1 class="public-procurement__title">{{info.publicProcurement.title}}</h1>
+    <button class="public-procurement__button" [routerLink]="info.publicProcurement.actions.link">{{info.publicProcurement.actions.title}} <span class="howWeBuy__arrow">></span></button>
+  </div>
+  <div class="public-procurement__items">
+    <a class="public-procurement__item link" *ngFor="let content of info.publicProcurement.content" [href]="content.action.link">
+      <div class="public-procurement__ids" *ngIf="content.idNumber != ''">
+        <p class="public-procurement__alias">{{content.alias}}</p>
+        <p class="public-procurement__id-number">{{content.idNumber}}</p>
+      </div>
+      <h2>{{content.title}}</h2>
+    </a>
+  </div>
+</section>
+<footer>
+</footer>

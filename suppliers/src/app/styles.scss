@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'styles/mixins.scss';
+@import 'styles/extends.scss';
+
+:root {
+    --color-primary: black;
+    --color-secondary: white;
+    --color-hover: green;
+    --color-bg:red;
+
+    --background-main:#ECECEC;
+    --background-sections: #ffff;
+}
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+app-root {
+    @extend %body;
+    display: $default-display;
+}

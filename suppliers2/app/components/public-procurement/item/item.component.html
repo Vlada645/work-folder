@@ -1,9 +1,0 @@
-<div class="public-procurement__items">
-  <a class="public-procurement__item link" [href]="content.action.link" *ngFor="let content of contentOfItems.content">
-    <div class="public-procurement__ids">
-      <p class="public-procurement__alias" *ngIf="content.number">{{ content.number }}</p>
-      <p class="public-procurement__id-number" *ngIf="content.idNumber">{{ content.idNumber }}</p>
-    </div>
-    <h2>{{ content.title }}</h2>
-  </a>
-</div>

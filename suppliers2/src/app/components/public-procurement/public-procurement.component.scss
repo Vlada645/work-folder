@@ -1,0 +1,28 @@
+@import '../../../styles/extends';
+@import '../../../styles/mixins';
+
+.public-procurement {
+    @extend %sections;
+    background: none;
+    padding-top: 110px;
+    align-items: flex-start;
+    gap: 56px;
+
+    &__title {
+       font-size: 1.75rem;
+    }
+    &__button {
+        background-color: #F4F4F4;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 12px;
+    }
+    &__text {
+        display: $default-display;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

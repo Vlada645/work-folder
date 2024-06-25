@@ -1,0 +1,11 @@
+<section class="public-procurement" >
+    <div class="public-procurement__text">
+      <h1 class="public-procurement__title">{{ publicProcurementInfo.title }}</h1>
+      <button class="public-procurement__button" [routerLink]="publicProcurementInfo.actions.link">
+        {{ publicProcurementInfo.actions.title }}
+        <span class="howWeBuy__arrow">></span>
+      </button>
+    </div>
+  </section>
+
+<app-item [contentOfItems]="publicProcurementInfo"></app-item>

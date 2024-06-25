@@ -1,7 +1,0 @@
-@function color($color-name) {
-    @return var(--color-#{$color-name});
-}
-
-@function background-color($background-name) {
-    @return var(--background-#{$background-name})
-}
